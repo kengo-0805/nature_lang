@@ -10,6 +10,6 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    printf("自然言語処理!\n");
     return 0;
 }
