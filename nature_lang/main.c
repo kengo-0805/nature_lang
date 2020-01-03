@@ -6,15 +6,49 @@
 //  Copyright © 2019 kengohorii. All rights reserved.
 //
 
-#include <stdio.h>
+/*
+ 文字を一文字ずつ読み取る
+ その文字の場合わけ
+ テキストファイルの読み込み
+ */
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("自然言語処理!\n");
+
+#include <stdio.h>
+#define NUMBER 8   //読み取る文字の最大数
+int main(void) {
+    
+    //テキストファイルの読み込みなしで作成ver
+    int i,j;
+    int alphabet[27];   //各アルファベットを格納する箱
+    char letter[NUMBER] = {"ababbaa"};   //テキストファイルの代わり
+
+/*文字の読み取り*/
+    printf("アルファベットを入力してください：");
+//    scanf("%s", &letter[NUMBER]);
+    //printf("入力した文字は%c\n", letter);
+    printf("6番目のアルファベットは%c\n", letter[5]);
+    
+/*アルファベットカウントの場合わけ*/
+    for(i = 0; i < alphabet[i]; i++){
+        if(letter[i] = 'a'){
+            alphabet[0]++;
+        }else if(letter[i] = 'b'){
+            alphabet[1]++;
+        }
+    }
+    
+    /*各アルファベット個数の表示*/
+    for(i = 0; i < alphabet[i]; i++){
+        printf("%c:",letter[i]);  //アルファベット表示
+        for(j = 0; j < alphabet[i]; j++){
+            putchar('*');
+            putchar('\n');
+        }
+    }
     //テキストファイル読み込み
     //配列に入れる
     //scanfで読み込み
     //switchでカウント
-    //sortで並び替え
+    //sortで並び替え？
     return 0;
 }
