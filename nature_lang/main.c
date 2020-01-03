@@ -45,10 +45,6 @@ int main(void) {
             putchar('\n');
         }
     }
-    //テキストファイル読み込み
-    //配列に入れる
-    //scanfで読み込み
-    //switchでカウント
-    //sortで並び替え？
+   
     return 0;
 }
