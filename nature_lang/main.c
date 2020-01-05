@@ -21,9 +21,9 @@ int main(void) {
     
     //テキストファイルの読み込みなしで作成ver
     int i,j;
-    int alphabet[25] = {0};   //各アルファベットを格納する箱
-    char letter[NUMBER] = {"ababbaabcazzz"};   //テキストファイルの代わり
-
+    int alphabet[27] = {0};   //各アルファベットを格納する箱
+    char letter[NUMBER] = {"nnnnnnnnnnn"};//テキストファイルの代わり
+    char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
 /*文字の読み取り*/
 //    printf("アルファベットを入力してください：");
 //    scanf("%s", &letter[NUMBER]);
@@ -40,60 +40,59 @@ int main(void) {
         }else if(letter[i] == 'd'){
             alphabet[3]++;
         }else if(letter[i] == 'e'){
-            alphabet[3]++;
-        }else if(letter[i] == 'f'){
             alphabet[4]++;
-        }else if(letter[i] == 'g'){
+        }else if(letter[i] == 'f'){
             alphabet[5]++;
-        }else if(letter[i] == 'h'){
+        }else if(letter[i] == 'g'){
             alphabet[6]++;
-        }else if(letter[i] == 'i'){
+        }else if(letter[i] == 'h'){
             alphabet[7]++;
-        }else if(letter[i] == 'j'){
+        }else if(letter[i] == 'i'){
             alphabet[8]++;
-        }else if(letter[i] == 'k'){
+        }else if(letter[i] == 'j'){
             alphabet[9]++;
-        }else if(letter[i] == 'l'){
+        }else if(letter[i] == 'k'){
             alphabet[10]++;
-        }else if(letter[i] == 'm'){
+        }else if(letter[i] == 'l'){
             alphabet[11]++;
-        }else if(letter[i] == 'n'){
+        }else if(letter[i] == 'm'){
             alphabet[12]++;
-        }else if(letter[i] == 'o'){
+        }else if(letter[i] == 'n'){
             alphabet[13]++;
-        }else if(letter[i] == 'p'){
+        }else if(letter[i] == 'o'){
             alphabet[14]++;
-        }else if(letter[i] == 'q'){
+        }else if(letter[i] == 'p'){
             alphabet[15]++;
-        }else if(letter[i] == 'r'){
+        }else if(letter[i] == 'q'){
             alphabet[16]++;
-        }else if(letter[i] == 's'){
+        }else if(letter[i] == 'r'){
             alphabet[17]++;
-        }else if(letter[i] == 't'){
+        }else if(letter[i] == 's'){
             alphabet[18]++;
-        }else if(letter[i] == 'u'){
+        }else if(letter[i] == 't'){
             alphabet[19]++;
-        }else if(letter[i] == 'v'){
+        }else if(letter[i] == 'u'){
             alphabet[20]++;
-        }else if(letter[i] == 'w'){
+        }else if(letter[i] == 'v'){
             alphabet[21]++;
-        }else if(letter[i] == 'x'){
+        }else if(letter[i] == 'w'){
             alphabet[22]++;
-        }else if(letter[i] == 'y'){
+        }else if(letter[i] == 'x'){
             alphabet[23]++;
-        }else if(letter[i] == 'z'){
+        }else if(letter[i] == 'y'){
             alphabet[24]++;
-        }else {
+        }else if(letter[i] == 'z'){
             alphabet[25]++;
+        }else {
+            alphabet[26]++;
         }
     }
-printf("zの個数:%d\n",alphabet[24]);
   
     
     /*各アルファベット個数の表示*/
-    for(i = 0; i < alphabet[i]; i++){
-        printf("実行数%d回目\n",i);
-        printf("%c:",letter[i]);  //アルファベット表示
+    for(i = 0; i < 26; i++){
+//      printf("実行数%d回目\n",i + 1);
+        printf("%c:",alal[i]);//アルファベットを順番に表示する
         for(j = 0; j < alphabet[i]; j++){
             putchar('*');
         }
