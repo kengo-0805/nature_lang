@@ -14,22 +14,45 @@
 
 
 #include <stdio.h>
+#include <string.h>
 #define NUMBER 80   //読み取る文字の最大数
 
 
 int main(void) {
-    
-    //テキストファイルの読み込みなしで作成ver
+    FILE *fp;
     int i,j;
+    int mojisu = 0;
     int alphabet[27] = {0};   //各アルファベットを格納する箱
-    char letter[NUMBER] = {"nnnnnnnnnnn"};//テキストファイルの代わり
+    char letter[NUMBER];//テキストファイルの代わり
     char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
+
+    
 /*文字の読み取り*/
+    if ((fp = fopen("alphabet2020.txt", "r")) == 'NULL'){
+        printf("\aファイルをオープンできません。\n");
+    }else{
+        for(i = 0; i < NUMBER; i++){
+            if(fscanf(fp, "%s", letter[mojisu]) != 1){
+                break;
+            }
+            mojisu++;
+        }
+    }
+    fclose(fp);
+    for(i = 0; i < 80; i++){
+        printf("%s\n",letter[NUMBER]);
+    }
+    
 //    printf("アルファベットを入力してください：");
 //    scanf("%s", &letter[NUMBER]);
     //printf("入力した文字は%c\n", letter);
     
-/*アルファベットカウントの場合わけ*/
+    
+    
+    /*
+    
+    
+//アルファベットカウントの場合わけ
     for(i = 0; i < letter[i]; i++){
         if(letter[i] == 'a'){
             alphabet[0]++;
@@ -89,7 +112,7 @@ int main(void) {
     }
   
     
-    /*各アルファベット個数の表示*/
+//各アルファベット個数の表示
     for(i = 0; i < 26; i++){
 //      printf("実行数%d回目\n",i + 1);
         printf("%c:",alal[i]);//アルファベットを順番に表示する
@@ -99,6 +122,10 @@ int main(void) {
         putchar('\n');
     }
    
+    
+    
+    */
+    
     return 0;
 }
 
