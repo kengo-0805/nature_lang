@@ -15,7 +15,8 @@
 
 #include <stdio.h>
 #include <string.h>
-#define NUMBER 80   //読み取る文字の最大数
+#include <stdlib.h>
+#define NUMBER 256   //読み取る文字の最大数
 
 
 int main(void) {
@@ -26,10 +27,11 @@ int main(void) {
     char letter[NUMBER];//テキストファイルの代わり
     char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
 
-    
+//fscanfで文字を読み取っって一文字ずつletter[]に格納できれば完成
 /*文字の読み取り*/
-    if ((fp = fopen("alphabet2020.txt", "r")) == 'NULL'){
+    if ((fp = fopen("alphabet2020.txt", "r")) == NULL){
         printf("\aファイルをオープンできません。\n");
+        exit (0);
     }else{
         for(i = 0; i < NUMBER; i++){
             if(fscanf(fp, "%s", letter[mojisu]) != 1){

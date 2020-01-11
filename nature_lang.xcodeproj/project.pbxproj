@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		BCF2568A23B8589100FEA430 /* nature_lang */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nature_lang; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF2568D23B8589100FEA430 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BCF2569423C6F73B00FEA430 /* alphabet2020.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alphabet2020.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		BCF2568C23B8589100FEA430 /* nature_lang */ = {
 			isa = PBXGroup;
 			children = (
+				BCF2569423C6F73B00FEA430 /* alphabet2020.txt */,
 				BCF2568D23B8589100FEA430 /* main.c */,
 			);
 			path = nature_lang;
