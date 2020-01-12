@@ -5,6 +5,10 @@
 //  Created by 堀井健吾 on 2019/12/29.
 //  Copyright © 2019 kengohorii. All rights reserved.
 //
+//英字小文字のみをカウントする。
+//大文字、スペース、ピリオド等はカウントされない
+//
+
 
 /*
  文字を一文字ずつ読み取る
@@ -16,14 +20,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define NUMBER 256   //読み取る文字の最大数
+#define NUMBER 16384   //読み取る文字の最大数
 
 
 int main(void) {
     FILE *fp;
     int i,j;
     int n = 0;
-    int mojisu = 1000;
     int alphabet[27] = {0};   //各アルファベットを格納する箱
     int letter[NUMBER] = {0};
     char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
@@ -40,8 +43,11 @@ int main(void) {
             }
         }
     fclose(fp);
+
+    
+//     読み取ったテキストの表示
     for(i = 0; i < n; i++){
-        printf("%c\n",letter[i]);
+        printf("%c",letter[i]);
     }
     
     
@@ -117,10 +123,15 @@ int main(void) {
         }
         putchar('\n');
     }
-   
-    
-    
-    
+  /*その他の記号の処理
+    printf("その他:");
+    for(i=0; i < alphabet[26];i++){
+        putchar('*');
+    }
+    putchar('\n');
+    printf("%d",alphabet[26]);
+    */
+    printf("その他に入れた数:%d\n",alphabet[26]);
     return 0;
 }
 
