@@ -22,27 +22,29 @@
 int main(void) {
     FILE *fp;
     int i,j;
-    int mojisu = 0;
+    int c[10]={0};
+    int n = 0;
+    int mojisu = 1000;
     int alphabet[27] = {0};   //各アルファベットを格納する箱
-    char letter[NUMBER];//テキストファイルの代わり
+    char letter[6] = {'a','a','a','a','a','a'}; //= "/Users/horiikengo/Documents/C言語/nature_lang/nature_lang/alphabet2020.txt";
     char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
 
 //fscanfで文字を読み取っって一文字ずつletter[]に格納できれば完成
 /*文字の読み取り*/
-    if ((fp = fopen("alphabet2020.txt", "r")) == NULL){
+    fp = fopen("/Users/horiikengo/Documents/C言語/nature_lang/nature_lang/alphabet2020.txt","r");
+    if (fp == NULL){
         printf("\aファイルをオープンできません。\n");
-        exit (0);
+        return 0;
     }else{
-        for(i = 0; i < NUMBER; i++){
-            if(fscanf(fp, "%s", letter[mojisu]) != 1){
-                break;
+        while(! feof(fp) && n < 512){
+//            fscanf(fp, "%c", &(letter[6]));
+            c[n] = fgetc(fp);
+            n++;
             }
-            mojisu++;
         }
-    }
     fclose(fp);
-    for(i = 0; i < 80; i++){
-        printf("%s\n",letter[NUMBER]);
+    for(i = 0; i < n; i++){
+        printf("%c\n",c[i]);
     }
     
 //    printf("アルファベットを入力してください：");
