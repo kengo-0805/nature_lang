@@ -22,38 +22,30 @@
 int main(void) {
     FILE *fp;
     int i,j;
-    int c[10]={0};
     int n = 0;
     int mojisu = 1000;
     int alphabet[27] = {0};   //各アルファベットを格納する箱
-    char letter[6] = {'a','a','a','a','a','a'}; //= "/Users/horiikengo/Documents/C言語/nature_lang/nature_lang/alphabet2020.txt";
+    int letter[NUMBER] = {0};
     char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
 
-//fscanfで文字を読み取っって一文字ずつletter[]に格納できれば完成
 /*文字の読み取り*/
     fp = fopen("/Users/horiikengo/Documents/C言語/nature_lang/nature_lang/alphabet2020.txt","r");
     if (fp == NULL){
         printf("\aファイルをオープンできません。\n");
         return 0;
     }else{
-        while(! feof(fp) && n < 512){
-//            fscanf(fp, "%c", &(letter[6]));
-            c[n] = fgetc(fp);
+        while(! feof(fp) && n < NUMBER){
+            letter[n] = fgetc(fp);
             n++;
             }
         }
     fclose(fp);
     for(i = 0; i < n; i++){
-        printf("%c\n",c[i]);
+        printf("%c\n",letter[i]);
     }
     
-//    printf("アルファベットを入力してください：");
-//    scanf("%s", &letter[NUMBER]);
-    //printf("入力した文字は%c\n", letter);
     
     
-    
-    /*
     
     
 //アルファベットカウントの場合わけ
@@ -128,7 +120,6 @@ int main(void) {
    
     
     
-    */
     
     return 0;
 }
