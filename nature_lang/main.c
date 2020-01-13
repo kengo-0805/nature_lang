@@ -21,28 +21,30 @@
 #include <string.h>
 #include <stdlib.h>
 #define NUMBER 16384   //読み取る文字の最大数
+#define MOJI 29
 
 
 int main(void) {
-    FILE *fp;
+    FILE *sfp;
+    FILE *dfp;
     int i,j;
     int n = 0;
-    int alphabet[27] = {0};   //各アルファベットを格納する箱
+    int alphabet[MOJI] = {0};   //各アルファベットを格納する箱
     int letter[NUMBER] = {0};
-    char alal[26] = {"abcdefghijklmnopqrstuvwxyz"};
+    char alal[28] = {"abcdefghijklmnopqrstuvwxyz!?"};
 
 /*文字の読み取り*/
-    fp = fopen("/Users/horiikengo/Documents/C言語/nature_lang/nature_lang/alphabet2020.txt","r");
-    if (fp == NULL){
+    sfp = fopen("/Users/horiikengo/Documents/C言語/nature_lang/nature_lang/alphabet2020.txt","r");
+    if (sfp == NULL){
         printf("\aファイルをオープンできません。\n");
         return 0;
     }else{
-        while(! feof(fp) && n < NUMBER){
-            letter[n] = fgetc(fp);
+        while(! feof(sfp) && n < NUMBER){
+            letter[n] = fgetc(sfp);
             n++;
             }
         }
-    fclose(fp);
+    fclose(sfp);
 
     
 //     読み取ったテキストの表示
@@ -108,14 +110,20 @@ int main(void) {
             alphabet[24]++;
         }else if(letter[i] == 'z'){
             alphabet[25]++;
-        }else {
+        }else if(alphabet[i] == ' '){
             alphabet[26]++;
+//            !で表示
+        }else if(alphabet[i] == '\n'){
+            alphabet[27]++;
+//            ?で表示
+        }else{
+            alphabet[28]++;
         }
     }
   
     
 //各アルファベット個数の表示
-    for(i = 0; i < 26; i++){
+    for(i = 0; i < MOJI; i++){
 //      printf("実行数%d回目\n",i + 1);
         printf("%c:",alal[i]);//アルファベットを順番に表示する
         for(j = 0; j < alphabet[i]; j++){
@@ -131,7 +139,7 @@ int main(void) {
     putchar('\n');
     printf("%d",alphabet[26]);
     */
-    printf("その他に入れた数:%d\n",alphabet[26]);
+    printf("その他に入れた数:%d\n",alphabet[28]);
     return 0;
 }
 
